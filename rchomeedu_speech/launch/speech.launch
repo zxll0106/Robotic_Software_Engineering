@@ -1,0 +1,19 @@
+<launch>
+	<!-- pocketsphinx语音识别-->
+	<arg name="dict" default="/home/zhaixiaolin/catkin_ws/src/rc-home-edu-learn-ros-master/rchomeedu_speech/robocup/robocup.dic" />
+	<arg name="lm"  default="/home/zhaixiaolin/catkin_ws/src/rc-home-edu-learn-ros-master/rchomeedu_speech/robocup/robocup.lm" />
+
+	<include file="$(find rchomeedu_speech)/launch/lm.launch">
+		<arg name="dict" value="$(arg dict)" />
+		<arg name="lm"  value="$(arg lm)" />
+	</include>
+
+	<!-- 启动aiml对话节点-->
+	<node pkg="rchomeedu_speech" type="speech1.py" name="speech1" output="screen"/>
+
+	<!--soundplay节点-->
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+
+	
+
+</launch>

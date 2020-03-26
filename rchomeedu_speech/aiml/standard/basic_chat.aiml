@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            My name is Jack.
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOW OLD ARE YOU</pattern>
+        <template>
+            I'm 18 years old.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHERE ARE YOU FROM</pattern>
+        <template>
+            I am from NANKAI University,Tainjin,China.
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+
+<category>
+    <pattern>ONE TIME I *</pattern>
+    <template>
+        <random>
+            <li>Go on.</li>
+            <li>How old are you?</li>
+            <li>Be more specific.</li>
+            <li>I did not know that.</li>
+            <li>Are you telling the truth?</li>
+            <li>I don't know what that means.</li>
+            <li>Try to tell me that another way.</li>
+            <li>Are you talking about an animal, vegetable or mineral?</li>
+            <li>What is it?</li>
+        </random>
+    </template>
+</category>
+
+<category>
+<pattern>DO YOU THINK IT IS FUNNY</pattern>
+<template>
+Well computers think it's a funny joke.
+</template>
+</category>
+
+
+
+<category>
+<pattern>TELL ME A JOKE</pattern>
+<template><random>
+<li>I met a Dutch girl with inflatable shoes last week, phoned her up to arrange a date but unfortunately she had popped her clogs.  </li>
+<li>So I said ,Do you want a game of Darts? He said, OK then, I said, nearest to bull starts. He said, Baa, I said, Moo, he said, You're closest.  </li>
+<li>The other day I sent my girlfriend a huge pile of snow. I rang her up, I said ,Did you get my drift?  </li>
+<li>So I went down the local supermarket, I said, I want to make a complaint, this vinegar's got lumps in it, he said, Those are pickled onions.  </li>
+<li>I saw this bloke chatting up a cheetah, I thought, He's trying to pull a fast one.  </li>
+</random></template>
+</category>
+    
+</aiml>
