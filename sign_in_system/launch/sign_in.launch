@@ -1,0 +1,30 @@
+<launch>
+	<!-- lm语音识别-->
+	<arg name="dict" default="/home/zhaixiaolin/catkin_ws/src/rc-home-edu-learn-ros-master/rchomeedu_speech/robocup/robocup.dic" />
+	<arg name="lm"  default="/home/zhaixiaolin/catkin_ws/src/rc-home-edu-learn-ros-master/rchomeedu_speech/robocup/robocup.lm" />
+	<arg name="image"  default="/usb_cam/image_raw" />
+
+	<include file="$(find rchomeedu_speech)/launch/lm.launch">
+		<arg name="dict" value="$(arg dict)" />
+		<arg name="lm"  value="$(arg lm)" />
+	</include>
+
+	<!--soundplay节点-->
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+
+	<!--usb_cam节点-->
+	<include file="$(find usb_cam)/launch/usb_cam-test.launch">
+	</include>
+
+	<!--face_recognition节点-->
+	<include file="$(find opencv_apps)/launch/face_recognition.launch">
+		<arg name="image" value="$(arg image)" />
+	</include>
+
+	<!--sign in节点-->
+	<node pkg="opencv_apps" type="sign_in_speech.py" name="sign_in_speech" />
+
+	<!--sign in节点-->
+	<node pkg="opencv_apps" type="sign_in.py" name="sign_in" />
+		
+</launch>
