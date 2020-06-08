@@ -1,0 +1,23 @@
+<launch>
+	
+	<arg name="map_file"  default="/home/zhaixiaolin/my_map.yaml" />
+
+	<!--turtlebot_world节点-->
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+	</include>
+
+	<!--amcl节点-->
+	<include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+		<arg name="map_file" value="$(arg map_file)" />
+	</include>
+
+	<!--turtlebot_rviz节点-->
+	<include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch">
+	</include>
+
+	<!--farewell_navigation节点-->
+	<node pkg="farewell" type="farewell_navigation.py" name="farewell_navigation" />
+
+	
+</launch>
+
